@@ -4,3 +4,4 @@ fzytest
 *.d
 config.h
 test/acceptance/vendor/bundle
+tarballs
