@@ -3,3 +3,4 @@ fzytest
 *.o
 *.d
 test/acceptance/vendor/bundle
+tarballs
