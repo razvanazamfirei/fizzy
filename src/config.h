@@ -19,6 +19,7 @@
 #define KEYTIMEOUT (getenv("KEYTIMEOUT") != NULL) ? atoi(getenv("KEYTIMEOUT")) : 25
 
 #define DEFAULT_TTY ((getenv("FZY_DEFAULT_TTY") != NULL) ? getenv("FZY_DEFAULT_TTY") : "/dev/tty")
+#define DEFAULT_PROMPT (getenv("FZY_DEFAULT_PROMPT") != NULL) ? getenv("FZY_DEFAULT_PROMPT") : "> "
 #define DEFAULT_NUM_LINES (getenv("FZY_DEFAULT_NUM_LINES") != NULL) ? atoi(getenv("FZY_DEFAULT_NUM_LINES")) : 10
 #define DEFAULT_WORKERS (getenv("FZY_DEFAULT_WORKERS") != NULL) ? atoi(getenv("FZY_DEFAULT_WORKERS")) : 0
 #define DEFAULT_SHOW_INFO (getenv("FZY_DEFAULT_SHOW_INFO") != NULL) ? atoi(getenv("FZY_DEFAULT_SHOW_INFO")) : 0
@@ -28,10 +29,9 @@
 #define DEFAULT_SCROLLOFF (getenv("FZY_DEFAULT_SCROLLOFF") != NULL) ? atoi(getenv("FZY_DEFAULT_SCROLLOFF")) : 0
 #define DEFAULT_FILTER (getenv("FZY_DEFAULT_FILTER") != NULL) ? getenv("FZY_DEFAULT_FILTER") : NULL
 #define DEFAULT_INIT_SEARCH (getenv("FZY_DEFAULT_INIT_SEARCH") != NULL) ? getenv("FZY_DEFAULT_INIT_SEARCH") : NULL
+#define DEFAULT_MARKER (getenv("FZY_DEFAULT_MARKER") != NULL ? *getenv("FZY_DEFAULT_MARKER") : '*')
+#define DEFAULT_POINTER ((getenv("FZY_DEFAULT_POINTER") != NULL) ? *getenv("FZY_DEFAULT_POINTER") : '>')
 
-#define DEFAULT_PROMPT (getenv("FZY_DEFAULT_PROMPT") != NULL) ? getenv("FZY_DEFAULT_PROMPT") : "> "
-#define DEFAULT_MARKER (getenv("FZY_DEFAULT_MARKER") != NULL) ? getenv("FZY_DEFAULT_MARKER") : "*"
-#define DEFAULT_POINTER (getenv("FZY_DEFAULT_POINTER") != NULL) ? getenv("FZY_DEFAULT_POINTER") : ">"
 
 #define DEFAULT_PAD (getenv("FZY_DEFAULT_PAD") != NULL) ? atoi(getenv("FZY_DEFAULT_PAD")) : 0
 #define DEFAULT_MULTI (getenv("FZY_DEFAULT_MULTI") != NULL) ? atoi(getenv("FZY_DEFAULT_MULTI")) : 0
@@ -55,4 +55,4 @@
 #define COLOR_ITEMS_NUM 5
 #define MAX_COLOR_LEN 48
 
-#define VERSION "1.2.1"
+#define VERSION "1.2"

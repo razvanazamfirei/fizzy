@@ -4,3 +4,4 @@ fzytest
 *.d
 test/acceptance/vendor/bundle
 tarballs
+.idea/
