@@ -5,3 +5,4 @@ fzytest
 config.h
 test/acceptance/vendor/bundle
 tarballs
+.idea/
