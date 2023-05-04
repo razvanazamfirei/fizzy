@@ -5,7 +5,7 @@
 
 typedef double score_t;
 #define SCORE_MAX INFINITY
-#define SCORE_MIN -INFINITY
+#define SCORE_MIN (-INFINITY)
 
 #define MATCH_MAX_LEN 1024
 

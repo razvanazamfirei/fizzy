@@ -1,8 +1,5 @@
 #include <ctype.h>
 #include <string.h>
-#include <strings.h>
-#include <stdio.h>
-#include <float.h>
 #include <math.h>
 #include <stdlib.h>
 
@@ -14,7 +11,7 @@
 char *
 strcasechr(const char *s, char c)
 {
-	const char accept[3] = {c, toupper(c), 0};
+	const char accept[3] = {c, (char)toupper(c), 0};
 	return strpbrk(s, accept);
 }
 
@@ -68,10 +65,10 @@ setup_match_struct(struct match_struct *match, const char *needle, const char *h
 		return;
 
 	for (int i = 0; i < match->needle_len; i++)
-		match->lower_needle[i] = tolower(needle[i]);
+		match->lower_needle[i] = (char) tolower(needle[i]);
 
 	for (int i = 0; i < match->haystack_len; i++)
-		match->lower_haystack[i] = tolower(haystack[i]);
+		match->lower_needle[i] = (char) tolower(haystack[i]);
 
 	precompute_bonus(haystack, match->match_bonus);
 }

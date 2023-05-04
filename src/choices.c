@@ -41,13 +41,13 @@ cmpchoice(const void *_idx1, const void *_idx2)
 static void *
 safe_realloc(void *buffer, size_t size)
 {
-	buffer = realloc(buffer, size);
-	if (!buffer) {
+	void *new_buffer = realloc(buffer, size);
+	if (!new_buffer) {
 		fprintf(stderr, "Error: Can't allocate memory (%zu bytes)\n", size);
 		abort();
 	}
 
-	return buffer;
+	return new_buffer;
 }
 
 void

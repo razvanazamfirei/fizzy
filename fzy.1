@@ -1,4 +1,4 @@
-.TH FZY 1 "Jul 9, 2022" "fzy 1.0"
+.TH FZY 1 "May 4, 2023" "fzy 1.4"
 .SH NAME
 fzy \- A fuzzy text selector menu for the terminal.
 .SH SYNOPSIS
@@ -154,6 +154,70 @@ For example, \fBFZF_COLORS="\-b1b2\-4"\fR is to be read as follows:
 .sp
 Default colors are: \fBb6b1b2b40\fR
 .
+.SH ENVIRONMENTAL VARIABLES
+\fBFZY_TTY\fR
+    Specifies the terminal device to use for input and output. If unset, fzy will use the current tty. Default value: "/dev/tty"
+
+\fBFZY_PROMPT\fR
+    Specifies the prompt to be displayed before the search input. Default value: "> "
+
+\fBFZY_MARKER\fR
+    Specifies the character to use as the marker for highlighting the currently selected item. Default value: "*"
+
+\fBFZY_POINTER\fR
+    Specifies the character to use as the pointer to indicate the selected item. Default value: ">"
+
+\fBFZY_NUM_LINES\fR
+    Specifies the maximum number of lines to display in the selection list. Default value: 10
+
+\fBFZY_WORKERS\fR
+    If set, specifies the number of worker threads to use when performing searches.
+
+\fBFZY_SHOW_INFO\fR
+    If set, displays information about the selection list at the bottom of the screen.
+
+\fBFZY_DELIMITER\fR
+    Specifies the delimiter to use when splitting input into separate search terms. Default value: '\n'
+
+\fBFZY_BENCHMARK\fR
+    If set, displays performance information when searching.
+
+\fBFZY_SCORES\fR
+    If set, displays the scores of the search results.
+
+\fBFZY_SCROLLOFF\fR
+    Specifies the number of lines to keep visible above and below the selected item. Default value: 0
+
+\fBFZY_FILTER\fR
+    If set, filters the selection list based on the input.
+
+\fBFZY_INIT_SEARCH\fR
+    Specifies the initial search string to use. Default value: NULL
+
+\fBFZY_PAD\fR
+    Specifies the amount of padding to use between the pointer and the selection text. Default value: 0
+
+\fBFZY_MULTI\fR
+    If set, allows multiple selections.
+
+\fBFZY_CYCLE\fR
+    If set, cycle through the selection list when reaching the end.
+
+\fBFZY_TAB_ACCEPTS\fR
+    If set, accepts the currently selected item when the TAB key is pressed.
+
+\fBFZY_RIGHT_ACCEPTS\fR
+    If set, specifies whether to accept the currently selected item when the right arrow key is pressed.
+
+\fBFZY_LEFT_ABORTS\fR
+    If set, aborts the current selection when the left arrow key is pressed.
+
+\fBFZY_NO_COLOR\fR
+    If set, disables ANSI color codes in the output.
+
+\fBFZY_REVERSE\fR
+    If set, displays the selection list in reverse order.
+
 .SH USAGE EXAMPLES
 .
 .TP
@@ -178,3 +242,5 @@ Same as above, but switching git branches.
 John Hawthorn <john.hawthorn@gmail.com>
 
 L. Abramovich <johndoe.arch@outlook.com>
+
+Razvan Azamfirei <azamfireirazvan@gmail.com>
