@@ -233,12 +233,6 @@ tty_flush(tty_t *tty)
 }
 
 size_t
-tty_getwidth(tty_t *tty)
-{
-	return tty->maxwidth;
-}
-
-size_t
 tty_getheight(tty_t *tty)
 {
 	return tty->maxheight;

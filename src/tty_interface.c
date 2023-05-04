@@ -12,7 +12,7 @@
 #  define PATH_MAX 4096
 # else
 #  define PATH_MAX 1024
-# endif /* __linux */
+# endif /* __linux__ */
 #endif /* PATH_MAX */
 
 #define _ESC 27
@@ -144,7 +144,12 @@ decolor_name(const char *name)
 static void
 save_selection(const char *p)
 {
-	selections = (char **)realloc(selections, (seln + 2) * sizeof(char *));
+	char **new_selections = (char **)realloc(selections, (seln + 2) * sizeof(char *));
+	if (!new_selections) {
+		fprintf(stderr, "Error: Can't allocate memory for selections\n");
+		exit(EXIT_FAILURE);
+	}
+	selections = new_selections;
 	selections[seln] = (char *)malloc((strlen(p) + 1) * sizeof(char));
 	strcpy(selections[seln], p);
 	seln++;
@@ -442,13 +447,15 @@ update_search(tty_interface_t *state)
 static void
 update_state(tty_interface_t *state)
 {
-	if (strcmp(state->last_search, state->search)) {
+	int cmp = strcmp(state->last_search, state->search);
+	if (cmp != 0) {
 		update_search(state);
 		if (state->options->reverse == 1)
 			tty_printf(state->tty, "\x1b[%dA\n", state->options->num_lines + 1);
 		draw(state);
 	}
 }
+
 
 static void
 action_emit(tty_interface_t *state)
@@ -769,7 +776,7 @@ handle_input(tty_interface_t *state, const char *s, int handle_ambiguous_key)
 		return;
 
 	/* No matching keybinding, decolorize and add to search */
-	char *p = input, *q = (char *)NULL;
+	char *p = input, *q;
 	if (strchr(input, _ESC) && (q = decolor_name(input)))
 		p = q;
 
