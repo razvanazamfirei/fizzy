@@ -15,8 +15,8 @@ typedef struct {
 	int show_info;
 	int pad;
 	int multi;
-	char pointer;
-	char marker;
+	const char *pointer;
+	const char *marker;
 	int cycle;
 	int tab_accepts;
 	int right_accepts;

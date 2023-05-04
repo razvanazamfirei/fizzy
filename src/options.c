@@ -148,13 +148,13 @@ options_parse(options_t *options, int argc, char *argv[])
 		} break;
 		case 'i': options->show_info = 1; break;
 		case 1:
-			if (optarg && *optarg)
-				options->pointer = *optarg;
-			break;
-		case 2:
-			if (optarg && *optarg)
-				options->marker = *optarg;
-			break;
+      if (optarg && *optarg)
+        options->pointer = &optarg[0];
+      break;
+    case 2:
+      if (optarg && *optarg)
+        options->marker = &optarg[0];
+      break;
 		case 3: options->cycle = 1;	break;
 		case 4:	options->tab_accepts = 1; break;
 		case 5: options->right_accepts = 1; break;
