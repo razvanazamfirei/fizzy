@@ -33,7 +33,6 @@
 #define DEFAULT_MARKER (getenv("FZY_DEFAULT_MARKER") != NULL) ? getenv("FZY_DEFAULT_MARKER") : "*"
 #define DEFAULT_POINTER (getenv("FZY_DEFAULT_POINTER") != NULL) ? getenv("FZY_DEFAULT_POINTER") : ">"
 
-
 #define DEFAULT_PAD (getenv("FZY_DEFAULT_PAD") != NULL) ? atoi(getenv("FZY_DEFAULT_PAD")) : 0
 #define DEFAULT_MULTI (getenv("FZY_DEFAULT_MULTI") != NULL) ? atoi(getenv("FZY_DEFAULT_MULTI")) : 0
 #define DEFAULT_CYCLE (getenv("FZY_DEFAULT_CYCLE") != NULL) ? atoi(getenv("FZY_DEFAULT_CYCLE")) : 0
@@ -56,4 +55,4 @@
 #define COLOR_ITEMS_NUM 5
 #define MAX_COLOR_LEN 48
 
-#define VERSION "1.2"
+#define VERSION "1.2.1"
