@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#define VERSION "1.3"
 #define GETENV_OR_DEFAULT(E, D) ((getenv(E) != NULL) ? getenv(E) : D)
 
 #define TTY_COLOR_HIGHLIGHT (getenv("TTY_COLOR_HIGHLIGHT") != NULL) ? atoi(getenv("TTY_COLOR_HIGHLIGHT")) : 4
@@ -55,5 +56,3 @@
 #define SEL_BG_COLOR 4
 #define COLOR_ITEMS_NUM 5
 #define MAX_COLOR_LEN 48
-
-#define VERSION "1.3"
